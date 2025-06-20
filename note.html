@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Special Note</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic styles for the entire page */
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent body scroll, allow container to scroll */
+            display: flex; /* Use flexbox to center content */
+            flex-direction: column; /* Stack children vertically */
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            background: url('images/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+
+        }
+
+        /* Animation for the background rotation */
+        @keyframes rotateBG {
+            from {
+                background-position: 0% 0%;
+            }
+            to {
+                background-position: 100% 100%;
+            }
+        }
+
+        /* Styles for the note container */
+        .note-container {
+            width: 85%; /* Responsive width for the container */
+            max-width: 800px; /* Maximum width on larger screens */
+            height: 80vh; /* Take up 80% of the viewport height */
+            overflow-y: auto; /* Enable vertical scrolling if content overflows */
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+            border-radius: 15px; /* Rounded corners */
+            padding: 30px; /* Internal spacing */
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.4); /* Soft shadow for depth */
+            color: #ffffff; /* White text color */
+            font-family: 'Pangolin', cursive; /* Apply the Pangolin font */
+            font-size: 1.3em; /* Larger font size for readability */
+            line-height: 1.8; /* Increased line height for better spacing */
+            text-align: justify; /* Justify text for a clean look */
+            margin: 20px; /* Margin around the container */
+            backdrop-filter: blur(5px); /* Optional: Adds a subtle blur effect to content behind */
+            -webkit-backdrop-filter: blur(5px); /* For Safari support */
+        }
+
+        /* Heading style within the note */
+        .note-container h1 {
+            font-size: 2.2em;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #FFD700; /* Gold color for heading */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Paragraph style within the note */
+        .note-container p {
+            margin-bottom: 1.5em; /* Space between paragraphs */
+        }
+
+        /* Custom scrollbar for Webkit browsers (Chrome, Safari, Edge) */
+        .note-container::-webkit-scrollbar {
+            width: 10px; /* Width of the scrollbar */
+        }
+
+        .note-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.08); /* Track background */
+            border-radius: 10px;
+        }
+
+        .note-container::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.4); /* Thumb color */
+            border-radius: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.1); /* Border around thumb */
+        }
+
+        .note-container::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(255, 255, 255, 0.6); /* Thumb color on hover */
+        }
+
+        /* Responsive adjustments for smaller screens (mobile) */
+        @media (max-width: 768px) {
+            .note-container {
+                width: 95%; /* Wider on very small screens */
+                height: 90vh; /* Maximize height on mobile */
+                padding: 20px;
+                font-size: 1.1em; /* Slightly smaller font on mobile */
+            }
+
+            .note-container h1 {
+                font-size: 1.8em;
+            }
+        }
+
+        /* Styles for the "Go to memories" button */
+        .memories-button {
+            display: block; /* Makes it a block-level element to apply margin: auto */
+            margin: 20px auto; /* Centers the button horizontally */
+            padding: 5px 10px; /* Padding for desired size */
+            width: fit-content; /* Shrinks the button width to fit its content */
+            background-color: #4682B4; /* A bluish color (Steel Blue) */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Lato', sans-serif; /* Using Lato font for button text */
+            font-size: 1em; /* Font size for the button */
+            cursor: pointer;
+            text-decoration: none; /* Removes underline from link */
+            opacity: 0; /* Initially hidden */
+            visibility: hidden; /* Ensures it takes no space and is not interactive until visible */
+            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; /* Smooth transition for appearance */
+            text-align: center; /* Centers the text inside the button */
+        }
+
+        .memories-button.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .memories-button:hover {
+            background-color: #4169E1; /* A slightly darker bluish color on hover (Royal Blue) */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="note-container" id="noteContainer">
+        <h1>A NOTE ON THIS SPECIAL DAY</h1>
+        <p>
+            Dear Sukruthi Rao Rannore(ENATE), I hope your doing well
+        </p>
+        <p>
+            I wanted to take some time and make this day memorable for you. If we go back to the time where we scolded each other everytime, I really didn't have an idea that this person would be the one I could rely on, from sharing small things to big secrets of life. I cherish every single one we've shared. Your presence and this friendship is sacred to me and can't be compared with any other friendships that I had (You know whom I'm referring to 😂) 
+        <p>
+            You always had hardtimes in life but you never let that smile fade away that's what makes you truly inspiring. I manifest that good times will surely come. Keep shining and never stop pursuing your dreams. You'll have my complete support anyday.
+        </p>
+        <p>
+            I guess bere en illa ansuthe helakke but wanted to thank you for always being there to give me some advice on things which were unclear. I look forward to creating many more crazy and funny memories together. I'll always be there 
+        </p>
+        <p>
+            Cheers to 23!,
+            <br>AA Employee (Shutter Opener)
+            <br> <a href="memories.html" class="memories-button" id="memoriesButton">Go to Album</a>
+        </p>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const noteContainer = document.getElementById('noteContainer');
+            const memoriesButton = document.getElementById('memoriesButton');
+            let buttonShown = false; // Flag to ensure the button only appears once
+
+            // Function to check scroll position
+            function checkScroll() {
+                // clientHeight: the inner height of the element (padding included)
+                // scrollHeight: the entire content height (including overflow content)
+                // scrollTop: the number of pixels that an element's content is scrolled upward
+                // When scrolled to the bottom, scrollHeight - scrollTop will be approximately equal to clientHeight
+                const isAtBottom = noteContainer.scrollHeight - noteContainer.scrollTop <= noteContainer.clientHeight + 1; // Added a small tolerance (+1) for browser inconsistencies
+
+                if (isAtBottom && !buttonShown) {
+                    memoriesButton.classList.add('show'); // Add 'show' class to make it visible
+                    buttonShown = true; // Set flag to true so it doesn't re-trigger
+                }
+            }
+
+            // Attach the scroll event listener to the note container
+            noteContainer.addEventListener('scroll', checkScroll);
+
+            // Also check on load, in case the content is not scrollable (short text)
+            // or if it's already at the bottom on page load.
+            checkScroll();
+        });
+    </script>
+
+</body>
+</html>
+

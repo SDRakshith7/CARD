@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Floating Memories</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at center, #1e2a47 0%, #0b0f1a 70%),
+        repeating-conic-gradient(
+          from 45deg,
+          rgba(255, 255, 255, 0.05) 0deg 10deg,
+          rgba(0, 0, 0, 0.15) 10deg 20deg
+        );
+        background: url('images/background.jpg');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+height: 100vh;
+margin: 0;
+overflow: hidden;
+
+      font-family: 'Lato', sans-serif;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @keyframes rotateBG {
+      from { background-position: 0% 0%; }
+      to { background-position: 100% 100%; }
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      gap: 10px;
+      width: 90vmin;
+      height: 90vmin;
+      position: relative;
+    }
+
+    .memory-item {
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      width: 100%;
+      height: 100%;
+    }
+
+    .center-text {
+      grid-column: 2 / span 3;
+      grid-row: 2 / span 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6vw;
+      font-weight: bold;
+      text-align: center;
+      z-index: 2;
+    }
+
+    /* Optional: fade-in effect */
+    .memory-item {
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      .center-text {
+        font-size: 5vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <!-- Top Row -->
+    <div class="memory-item" style="background-image: url('images/image18.jpg');"></div>
+    <div class="memory-item" style="background-image: url('images/image1.jpg');"></div>
+    <div class="memory-item" style="background-image: url('images/image2.jpeg');"></div>
+    <div class="memory-item" style="background-image: url('images/image3.jpeg');"></div>
+    <div class="memory-item" style="background-image: url('images/image15.jpeg');"></div>
+    
+
+    <!-- Left Column -->
+    <div class="memory-item" style="background-image: url('images/image6.jpeg');"></div>
+    <!-- Center gap -->
+    <div class="memory-item" style="background-image: url('images/image7.jpeg');"></div>
+    <!-- Right Column -->
+    <div class="memory-item" style="background-image: url('images/image8.jpeg');"></div>
+
+    <div class="memory-item" style="background-image: url('images/image9.jpeg');"></div>
+    <!-- Center text in the middle -->
+    <div class="center-text">Once again Happy Birthday  <br> 🥳😊🤞 <br> You were the best ❤️ <br> You are the best ❤️<br> You will be the best ❤️ <br>  <br> Hope you like this web app</div>
+    <div class="memory-item" style="background-image: url('images/image10.jpeg');"></div>
+
+    <!-- Left Column -->
+    <div class="memory-item" style="background-image: url('images/image4.jpeg');"></div>
+    <!-- Right Column -->
+    <div class="memory-item" style="background-image: url('images/image17.jpg');"></div>
+
+    <!-- Bottom Row -->
+    <div class="memory-item" style="background-image: url('images/image13.jpeg');"></div>
+    <div class="memory-item" style="background-image: url('images/image14.jpeg');"></div>
+    <div class="memory-item" style="background-image: url('images/image5.jpeg');"></div>
+    <div class="memory-item" style="background-image: url('images/image16.jpg');"></div>
+    
+    <!-- Last cell empty or for future use -->
+  </div>
+</body>
+</html>
